@@ -37,7 +37,7 @@ async function lowlevelApiTest () {
     var result = await riksbanken.api.getCrossRates(args)
     // console.log('================================================================================')
     // console.log(result);
-    console.log(JSON.stringify(result[0],0,2))
+    //console.log(JSON.stringify(result[0],0,2))
     if (result.length <2) {
         throw new Error("Didnt get result back")
     }

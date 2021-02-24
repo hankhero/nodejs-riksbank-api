@@ -3,27 +3,11 @@ const soap = require('soap');
 const { promisify } = require('util')
 //require('request').debug = true
 
-/*
-    getAllCrossNames
-    getAnnualAverageExchangeRates
-    getCrossRates
-    getCalendarDays
-    getInterestAndExchangeNames
-    getInterestAndExchangeGroupNames
-    getInterestAndExchangeRates
-    getLatestInterestAndExchangeRates
-    getMonthlyAverageExchangeRates
-*/
-
 const wdslUrl = 'https://swea.riksbank.se/sweaWS/wsdl/sweaWS_ssl.wsdl'
-
-//const createClientAsync = promisify(soap.createClientAsync).bind(soap);  
 
 var api = {}
 function addMethod(name) {
-
     const method = async function (args) {
-
         var options = {
             forceSoap12Headers: true,
             //disableCache: true,
@@ -47,18 +31,14 @@ addMethod('getInterestAndExchangeRates')
 addMethod('getLatestInterestAndExchangeRates')
 addMethod('getMonthlyAverageExchangeRates')
 
-
 // api.getCrossRates = async function (args) {
-
 //     var options = {
 //         forceSoap12Headers: true,
 //         disableCache: true,
 //         returnFault: true,
 //     }
 //     const client = await soap.createClientAsync(wdslUrl, options)
-
 //     var result = await client.getCrossRatesAsync(args);
-
 //     return result;
 // }
 
@@ -93,7 +73,6 @@ async function getSEKperUSD(fromDate,toDate) {
 
     var rows;
     for (var serie of result.groups[0].series) {
-        console.log("serie", serie);
         if (serie.seriesname === '1 USD = ? SEK') {
             rows = serie.resultrows;
         }
