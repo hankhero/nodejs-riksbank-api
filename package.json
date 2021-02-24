@@ -1,0 +1,20 @@
+{
+  "name": "riksbanken-api",
+  "version": "1.0.0",
+  "description": "Get data from riksbankens open api, sek/usd crosscurrency for example",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "riksbank",
+    "riksbanken",
+    "sek",
+    "currency"
+  ],
+  "author": "Henrik Hjelte",
+  "license": "MIT",
+  "dependencies": {
+    "soap": "0.36.0"
+  }
+}
